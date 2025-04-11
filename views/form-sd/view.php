@@ -1,0 +1,382 @@
+<?php
+
+use yii\helpers\Html;
+// use yii\widgets\DetailView;
+use kartik\detail\DetailView;
+
+/* @var $this yii\web\View */
+/* @var $model app\models\FormSd */
+
+$this->title = $model->no_daftar;
+$this->params['breadcrumbs'][] = ['label' => 'Formulir SD', 'url' => ['index']];
+$this->params['breadcrumbs'][] = $this->title;
+\yii\web\YiiAsset::register($this);
+?>
+<div class="form-sd-view box box-primary">
+    <div class="box-header">
+        <h2><b>FORMULIR PENDAFTARAN SD AL-IZZAH</b></h2>
+        <div class="box-body table-responsive no-padding">
+            <?= DetailView::widget([
+                'model' => $model,
+                'template' => '<tr><th width="180px" style="text-align:right">{label}</th><td>{value}</td></tr>',
+                'attributes' => [
+                // 'id',
+                    'no_daftar',
+                    'tgl_daftar',
+                    [
+                        'attribute' => 'id_thn',
+                        'format' => 'raw',
+                        'value' => $model->tahun->nama,
+                    ],
+                    [
+                        'group' => true,
+                        'label' => 'Data Calon Wali Murid',
+                        'rowOptions' => ['class' => 'bg-red'],
+                //'groupOptions' => ['class' => 'text-center']
+                    ],
+                    'nama_w',
+                    'usia_w',
+                    // [
+                    //     'attribute' => 'pekerjaan_w',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pekerjaan_w,
+                    // ],
+                    'alamat_w:ntext',
+                    'alamatkantor_w:ntext',
+                    'nm_lengkap_a',
+                    'panggilan_a',
+                    'tmptlahir_a',
+                    'tgllahir_a',
+                    // 'id_kelas',
+                    [
+                        'group' => true,
+                        'label' => 'Data Calon Peserta Didik',
+                        'rowOptions' => ['class' => 'bg-red'],
+                //'groupOptions' => ['class' => 'text-center']
+                    ],
+                    'lengkap_c',
+                    'panggilan_c',
+                    // 'id_jk_c',
+                    [
+                        'attribute' => 'id_jk_c',
+                        'format' => 'raw',
+                        'value' => $model->jk->jk,
+                    ],
+                    'tmptlahir_c',
+                    'tgllahir_c',
+                    // 'id_agama_c',
+                    [
+                        'attribute' => 'id_agama_c',
+                        'format' => 'raw',
+                        'value' => $model->agama->nama,
+                    ],
+                    'id_khusus_c',
+                    // [
+                    //     'attribute' => 'id_khusus_c',
+                    //     'format' => 'raw',
+                    //     'value' => $model->khusus,
+                    // ],
+                    'alamat_c:ntext',
+                    'id_jenis_tnggl',
+                    // [
+                    //     'attribute' => 'id_jenis_tnggl',
+                    //     'format' => 'raw',
+                    //     'value' => $model->jenisTinggal->nama,
+                    // ],
+                    'id_transport_c',
+                    // [
+                    //     'attribute' => 'id_transport_c',
+                    //     'format' => 'raw',
+                    //     'value' => $model->transport->nama,
+                    // ],
+                    'no_c',
+                    'email_c:email',
+                    'nama_b',
+                    'id_pendidikan_b',
+                    // [
+                    //     'attribute' => 'id_pendidikan_b',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pendidikan->nama,
+                    // ],
+                    'id_pekerjaan_b',
+                    // [
+                    //     'attribute' => 'id_pekerjaan_b',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pekerjaan->nama,
+                    // ],
+                    'id_penghasilan_b',
+                    // [
+                    //     'attribute' => 'id_penghasilan_b',
+                    //     'format' => 'raw',
+                    //     'value' => $model->penghasilan->nama,
+                    // ],
+                    'id_khusus_b',
+                    // [
+                    //     'attribute' => 'id_khusus_b',
+                    //     'format' => 'raw',
+                    //     'value' => $model->khusus->nama,
+                    // ],
+                    'thnlahir_b',
+                    'nama_i',
+                    'id_pendidikan_i',
+                    // [
+                    //     'attribute' => 'id_pendidikan_i',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pendidikan->nama,
+                    // ],
+                    'id_pekerjaan_i',
+                    // [
+                    //     'attribute' => 'id_pekerjaan_i',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pekerjaan->nama,
+                    // ],
+                    'id_penghasilan_i',
+                    // [
+                    //     'attribute' => 'id_penghasilan_i',
+                    //     'format' => 'raw',
+                    //     'value' => $model->penghasilan->nama,
+                    // ],
+                    'id_khusus_i',
+                    // [
+                    //     'attribute' => 'id_khusus_i',
+                    //     'format' => 'raw',
+                    //     'value' => $model->khusus->nama,
+                    // ],
+                    'thnlahir_i',
+                    'nama_wl',
+                    'thnlahir_w',
+                    'id_pendidikan_wl',
+                    // [
+                    //     'attribute' => 'id_pendidikan_wl',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pendidikan->nama,
+                    // ],
+                    'id_pekerjaan_wl',
+                    // [
+                    //     'attribute' => 'id_pekerjaan_wl',
+                    //     'format' => 'raw',
+                    //     'value' => $model->pekerjaan->nama,
+                    // ],
+                    'id_penghasilan_wl',
+                    // [
+                    //     'attribute' => 'id_penghasilan_wl',
+                    //     'format' => 'raw',
+                    //     'value' => $model->penghasilan->nama,
+                    // ],
+                    [
+                        'group' => true,
+                        'label' => 'Data Periodik Siswa',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    // 'tinggi_a',
+                    // 'berat_a',
+                    [
+                        'label' => 'Tinggi Anak',
+                        'attribute' => 'tinggi_a',
+                        'format' => 'raw',
+                        'value' => $model->tinggi_a. ' Centimeter',
+                    ],
+                    [
+                        'label' => 'Berat Anak',
+                        'attribute' => 'berat_a',
+                        'format' => 'raw',
+                        'value' => $model->berat_a. ' Kilogram',
+                    ],
+                    [
+                        'label' => 'Jarak dari Rumah ke Sekolah',
+                        'attribute' => 'jarak_a',
+                        'format' => 'raw',
+                        'value' => $model->jarak_a. ' Meter',
+                    ],
+                    [
+                        'label' => 'Waktu Tempuh dari Rumah ke Sekolah',
+                        'attribute' => 'waktu_tempuh',
+                        'format' => 'raw',
+                        'value' => $model->waktu_tempuh. ' Menit',
+                    ],
+                    [
+                        'label' => 'Jumlah Saudara Kandung',
+                        'attribute' => 'saudara_a',
+                        'format' => 'raw',
+                        'value' => $model->saudara_a. ' Saudara',
+                    ],
+                    [
+                        'group' => true,
+                        'label' => 'Kemampuan Siswa',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    'kem_1',
+                    'kem_2',
+                    'kem_3',
+                    'kem_4',
+                    'kem_5',
+                    'kem_6',
+                    'kem_7',
+                    'kem_8',
+                    'kem_9',
+                    'kem_10',
+                    'kem_11',
+                    'kem_12',
+                    [
+                        'group' => true,
+                        'label' => 'Sosialisasi, Emosi, dan Psikologi Siswa',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    'sos1',
+                    'sos2',
+                    [
+                        'attribute' => 'sosa',
+                        'format' => 'raw',
+                        'value' => $model->getSosa(),
+                    ],
+                    [
+                        'attribute' => 'sosb',
+                        'format' => 'raw',
+                        'value' => $model->getSosb(),
+                    ],
+                    [
+                        'attribute' => 'sosc',
+                        'format' => 'raw',
+                        'value' => $model->getSosc(),
+                    ],
+                    [
+                        'attribute' => 'sosd',
+                        'format' => 'raw',
+                        'value' => $model->getSosd(),
+                    ],
+                    [
+                        'attribute' => 'sose',
+                        'format' => 'raw',
+                        'value' => $model->getSose(),
+                    ],
+                    [
+                        'attribute' => 'sosf',
+                        'format' => 'raw',
+                        'value' => $model->getSosf(),
+                    ],
+                    [
+                        'attribute' => 'sosg',
+                        'format' => 'raw',
+                        'value' => $model->getSosg(),
+                    ],
+                    [
+                        'attribute' => 'sosh',
+                        'format' => 'raw',
+                        'value' => $model->getSosh(),
+                    ],
+                    [
+                        'attribute' => 'sosi',
+                        'format' => 'raw',
+                        'value' => $model->getSosi(),
+                    ],
+                    [
+                        'attribute' => 'kep',
+                        'format' => 'raw',
+                        'value' => $model->getKepribadian(),
+                    ],
+                    [
+                        'group' => true,
+                        'label' => 'Kesenangan',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    'kes1',
+                    'kes2',
+                    'kes3',
+                    'kes4',
+                    'kes5',
+                    'kes6',
+                    'kes7',
+                    [
+                        'group' => true,
+                        'label' => 'Frekuensi',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    [
+                        'label' => 'Sekolah/Belajar',
+                        'attribute' => 'fre1',
+                        'format' => 'raw',
+                        'value' => $model->fre1. '%',
+                    ],
+                    [
+                        'label' => 'Tidur/Istirahat',
+                        'attribute' => 'fre2',
+                        'format' => 'raw',
+                        'value' => $model->fre2. '%',
+                    ],
+                    [
+                        'label' => 'Bermain',
+                        'attribute' => 'fre3',
+                        'format' => 'raw',
+                        'value' => $model->fre3. '%',
+                    ],
+                    [
+                        'label' => 'Nonton Televisi',
+                        'attribute' => 'fre4',
+                        'format' => 'raw',
+                        'value' => $model->fre4. '%',
+                    ],
+                    [
+                        'group' => true,
+                        'label' => 'Asal Sekolah Calon Murid',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    'as1',
+                    'as2',
+                    'as3',
+                    'as4',
+                    'as5',
+                    'as6',
+                    'as7',
+                    'as8',
+                    'as9',
+                    // 'as10',
+                    [
+                        'group' => true,
+                        'label' => 'Keterangan Orang Tua/Wali Murid',
+                        'rowOptions' => ['class' => 'bg-red'],
+                    ],
+                    'ket1',
+                    'ket2',
+                    'ket3',
+                    [
+                        'label' => 'Dari mana Anda mendapatkan informasi SDIT AL-IZZAH?',
+                        'attribute' => 'ket4',
+                        'format' => 'raw',
+                        'value' => $model->getKeterangan4(),
+                    ],
+                    [
+                        'label'=>'Download Formulir',
+                        'format' => 'raw',
+                        'value' =>  Html::a('<i class="fa fa-print"></i> Download Formulir', ['pdf', 'id' => $model->id], ['class' => 'btn btn-danger btn-flat','target' => '_blank']) 
+                    ],
+                // 'jenis_prestasi',
+                // 'tingkat_prestasi',
+                // 'nm_prestasi',
+                // 'thn_prestasi',
+                // 'penyelenggara_prestasi',
+                // 'jenis_beasiswa',
+                // 'ket_beasiswa',
+                // 'thn_m_beasiswa',
+                // 'thn_s_beasiswa',
+                // 'id_jenis_imun',
+                // 'usia_imun',
+                // 'ket_imun',
+                // 'per_1',
+                // 'per2',
+                // 'per3',
+                // 'per4',
+                // 'per5',
+                // 'per6',
+                // 'id_jns_penyakit',
+                // 'usia_penyakit',
+                // 'lama_penyakit',
+                // 'obat_penyakit',
+                // 'status_penyakit',
+                // 'id_jns_makanan',
+                // 'usia_makanan',
+                // 'akibat_makanan',
+                ],
+            ]) ?>
+        </div>
+    </div>
+</div>
